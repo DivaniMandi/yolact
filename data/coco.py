@@ -1,10 +1,10 @@
+import cv2
 import os
 import os.path as osp
 import sys
 import torch
 import torch.utils.data as data
 import torch.nn.functional as F
-import cv2
 import numpy as np
 from .config import cfg
 from pycocotools import mask as maskUtils
