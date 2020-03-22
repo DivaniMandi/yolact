@@ -155,10 +155,23 @@ coco2017_testdev_dataset = dataset_base.copy({
     'label_map': COCO_LABEL_MAP
 })
 
+my_custom_dataset = dataset_base.copy({
+    'name': 'My Dataset',
+
+    'train_images': './data/coco/test_images/trainval.json',
+    'train_info':   './data/coco/test_images/trainval.json',
+
+    'valid_images': './data/coco/test_images/trainval.json',
+    'valid_info':   './data/coco/test_images/trainval.json',
+
+    'has_gt': True,
+    'class_names': ('my_class_id_1', 'my_class_id_2', 'my_class_id_3', ...)
+})
+
 PASCAL_CLASSES = ("aeroplane", "bicycle", "bird", "boat", "bottle",
                   "bus", "car", "cat", "chair", "cow", "diningtable",
                   "dog", "horse", "motorbike", "person", "pottedplant",
-                  "sheep", "sofa", "train", "tvmonitor")
+                  "sheep", "sofa", "train", "tvmonitor","bike")
 
 pascal_sbd_dataset = dataset_base.copy({
     'name': 'Pascal SBD 2012',
