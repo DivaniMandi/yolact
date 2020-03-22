@@ -62,7 +62,6 @@ class Config(object):
     """
     Holds the configuration for anything you want it to.
     To get the currently active config, call get_cfg().
-
     To use, just do cfg.x instead of cfg['x'].
     I made this because doing cfg['x'] all the time is dumb.
     """
@@ -155,23 +154,10 @@ coco2017_testdev_dataset = dataset_base.copy({
     'label_map': COCO_LABEL_MAP
 })
 
-my_custom_dataset = dataset_base.copy({
-    'name': 'My Dataset',
-
-    'train_images': './data/coco/annotations/trainval.json',
-    'train_info':   './data/coco/annotations/trainval.json',
-
-    'valid_images': './data/coco/annotations/trainval.json',
-    'valid_info':   './data/coco/annotations/trainval.json',
-
-    'has_gt': True,
-    'class_names': ('my_class_id_1', 'my_class_id_2', 'my_class_id_3', ...)
-})
-
 PASCAL_CLASSES = ("aeroplane", "bicycle", "bird", "boat", "bottle",
                   "bus", "car", "cat", "chair", "cow", "diningtable",
                   "dog", "horse", "motorbike", "person", "pottedplant",
-                  "sheep", "sofa", "train", "tvmonitor","bike")
+                  "sheep", "sofa", "train", "tvmonitor")
 
 pascal_sbd_dataset = dataset_base.copy({
     'name': 'Pascal SBD 2012',
@@ -428,7 +414,7 @@ fpn_base = Config({
 # ----------------------- CONFIG DEFAULTS ----------------------- #
 
 coco_base_config = Config({
-    'dataset': my_custom_dataset,
+    'dataset': coco2014_dataset,
     'num_classes': 81, # This should include the background class
 
     'max_iter': 400000,
@@ -836,4 +822,3 @@ def set_cfg(config_name:str):
 def set_dataset(dataset_name:str):
     """ Sets the dataset of the current config. """
     cfg.dataset = eval(dataset_name)
-    
