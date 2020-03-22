@@ -158,11 +158,11 @@ coco2017_testdev_dataset = dataset_base.copy({
 my_custom_dataset = dataset_base.copy({
     'name': 'My Dataset',
 
-    'train_images': './data/coco/test_images/trainval.json',
-    'train_info':   './data/coco/test_images/trainval.json',
+    'train_images': './data/coco/annotations/trainval.json',
+    'train_info':   './data/coco/annotations/trainval.json',
 
-    'valid_images': './data/coco/test_images/trainval.json',
-    'valid_info':   './data/coco/test_images/trainval.json',
+    'valid_images': './data/coco/annotations/trainval.json',
+    'valid_info':   './data/coco/annotations/trainval.json',
 
     'has_gt': True,
     'class_names': ('my_class_id_1', 'my_class_id_2', 'my_class_id_3', ...)
