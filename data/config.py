@@ -428,7 +428,7 @@ fpn_base = Config({
 # ----------------------- CONFIG DEFAULTS ----------------------- #
 
 coco_base_config = Config({
-    'dataset': coco2014_dataset,
+    'dataset': my_custom_dataset,
     'num_classes': 81, # This should include the background class
 
     'max_iter': 400000,
